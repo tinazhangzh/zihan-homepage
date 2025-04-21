@@ -32,9 +32,13 @@
       max-width: 800px;
       margin: auto;
       padding: 2em;
+      min-height: 60vh;
     }
     section {
-      margin-bottom: 2em;
+      display: none;
+    }
+    section.active {
+      display: block;
     }
     h2 {
       color: #2c3e50;
@@ -55,16 +59,16 @@
     <h1>Zihan Zhang</h1>
     <p>Graduate Student in Statistics | Columbia University</p>
   </header>
-  
+
   <nav>
-    <a href="#research">Research</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
+    <a href="#" onclick="showPage('research')">Research</a>
+    <a href="#" onclick="showPage('teaching')">Teaching</a>
+    <a href="#" onclick="showPage('cv')">CV</a>
+    <a href="#" onclick="showPage('contact')">Contact</a>
   </nav>
 
   <main>
-    <section id="research">
+    <section id="research" class="active">
       <h2>Research</h2>
       <p>My research interests include causal inference, computational social science, and applications of statistical methods in public policy and health economics. I have worked on projects involving gender wage disparities, cognitive health, and observational data integration.</p>
     </section>
@@ -90,5 +94,12 @@
   <footer>
     <p>&copy; 2025 Zihan Zhang | All rights reserved.</p>
   </footer>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
