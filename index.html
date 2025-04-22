@@ -317,10 +317,17 @@
   </div>
 
   <script>
-    function switchPage(pageId) {
-      document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".topnav a").forEach(link => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const pageId = this.textContent.trim();
+          document.querySelectorAll("main section").forEach(sec => sec.classList.remove("active"));
+          document.getElementById(pageId).classList.add("active");
+          window.scrollTo(0, 0); // scroll to top (especially useful for mobile)
+        });
+      });
+    });
   </script>
 </body>
 </html>
