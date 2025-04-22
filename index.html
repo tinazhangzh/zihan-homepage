@@ -324,7 +324,7 @@
           const pageId = this.textContent.trim();
           document.querySelectorAll("main section").forEach(sec => sec.classList.remove("active"));
           document.getElementById(pageId).classList.add("active");
-          window.scrollTo(0, 0); // scroll to top (especially useful for mobile)
+          window.scrollTo(0, 0); 
         });
       });
     });
