@@ -1,213 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zihan (Tina) Zhang | Academic Homepage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zihan Zhang | Academic Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f9f9f9;
-      --text: #333;
-      --header-bg: #2c3e50;
-      --highlight: #ffffff;
+      --dark: #2c2c2c;
+      --light: #f9f9f9;
+      --primary: #0077cc;
+      --text-light: #eaeaea;
     }
-    body.dark-mode {
-      --bg: #1f1f1f;
-      --text: #f0f0f0;
-      --header-bg: #1a1a2e;
-      --highlight: #2a2a2a;
-    }
+
     body {
-      font-family: Georgia, serif;
-      background-color: var(--bg);
-      color: var(--text);
       margin: 0;
-      padding: 0;
-      font-size: 18px;
-      line-height: 1.6;
+      font-family: 'Roboto', sans-serif;
+      background: var(--light);
+      color: #333;
       display: flex;
     }
+
     .sidebar {
       width: 260px;
-      background-color: var(--header-bg);
+      background: var(--dark);
       color: white;
-      padding: 2em 1em;
       min-height: 100vh;
+      padding: 2em 1em;
       box-sizing: border-box;
-      position: fixed;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .sidebar img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1em;
       border: 3px solid white;
     }
+
     .sidebar h1 {
       font-size: 1.2em;
-      margin: 0.5em 0;
+      margin: 1em 0 0.5em;
+      text-align: center;
     }
+
     .sidebar p {
       font-size: 0.9em;
       text-align: center;
-      margin-bottom: 1.5em;
     }
+
     .sidebar a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0.5em 0;
+      font-size: 0.9em;
+      display: block;
+    }
+
+    .topnav {
+      background: var(--dark);
+      color: white;
+      padding: 1em;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      position: fixed;
+      top: 0;
+      left: 260px;
+      right: 0;
+    }
+
+    .topnav a {
       color: white;
       text-decoration: none;
-      display: block;
-      margin: 0.3em 0;
-      font-size: 0.9em;
+      font-weight: bold;
     }
-    .container {
+
+    .content {
       margin-left: 260px;
+      margin-top: 60px;
       padding: 2em;
       max-width: 900px;
     }
-    nav {
-      text-align: center;
-      margin-bottom: 2em;
-    }
-    nav a {
-      margin: 0 1em;
-      text-decoration: none;
-      color: var(--header-bg);
-      font-weight: bold;
-    }
-    section {
-      display: none;
-    }
-    section.active {
-      display: block;
-    }
-    h2 {
-      color: var(--header-bg);
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.3em;
-    }
-    .card-item {
-      background-color: var(--highlight);
-      border-left: 4px solid var(--header-bg);
+
+    .card {
+      background: white;
+      border-left: 4px solid var(--primary);
       padding: 1em;
-      margin-bottom: 1.5em;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 2em;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 6px;
     }
-    .card-item h3 {
-      margin-top: 0;
-      font-size: 1.1em;
-      color: var(--header-bg);
-    }
-    #theme-toggle {
-      position: fixed;
-      top: 10px;
-      right: 20px;
-      background: none;
-      border: 2px solid var(--text);
-      color: var(--text);
-      padding: 0.3em 0.6em;
-      cursor: pointer;
-      border-radius: 5px;
-      z-index: 999;
+
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.3em;
+      color: var(--primary);
     }
   </style>
 </head>
 <body>
-  <div class="sidebar">
+  <aside class="sidebar">
     <img src="profile.jpg" alt="Zihan Zhang">
-    <h1>Zihan (Tina) Zhang</h1>
+    <h1>Zihan Zhang</h1>
     <p>Graduate Student<br>Statistics @ Columbia University</p>
-    <a href="#" onclick="showPage('home')">Home</a>
-    <a href="#" onclick="showPage('research')">Research</a>
-    <a href="#" onclick="showPage('cv')">CV</a>
-    <a href="#" onclick="showPage('teaching')">Teaching</a>
-    <a href="#" onclick="showPage('contact')">Contact</a>
-    <hr style="width: 80%; margin: 1em 0; border: 1px solid #555;">
-    <a href="mailto:zz3213@columbia.edu">Email</a>
-    <a href="https://github.com/tinazhangzh" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/zihanzhang/" target="_blank">LinkedIn</a>
-    <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
-  </div>
+    <a href="#">Email</a>
+    <a href="#">GitHub</a>
+    <a href="#">Google Scholar</a>
+    <a href="#">LinkedIn</a>
+  </aside>
 
-  <button id="theme-toggle" onclick="toggleTheme()">🌓</button>
+  <nav class="topnav">
+    <a href="#home">Home</a>
+    <a href="#research">Research</a>
+    <a href="#cv">CV</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <div class="container">
-    <main>
-      <section id="home" class="active">
-        <h2>About Me</h2>
-        <p>I am a graduate student in Statistics at Columbia University, with a dual undergraduate background in Statistics & Mathematics from UNC Chapel Hill. My work lies at the intersection of causal inference, data science, and the social sciences, with experience in research, policy evaluation, and public communication.</p>
-      </section>
+  <main class="content">
+    <section id="home">
+      <h2>About Me</h2>
+      <p>I am a graduate student in Statistics at Columbia University, with a dual undergraduate background in Statistics & Mathematics from UNC Chapel Hill. My work lies at the intersection of causal inference, data science, and the social sciences, with experience in research, policy evaluation, and public communication.</p>
+    </section>
 
-      <section id="research">
-        <h2>Research</h2>
-        <div class="card-item">
-          <h3>🎓 How Gender Affects Professors’ Compensation</h3>
-          <p>Explored salary disparities between two genders using causal inference methods in U.S. academia.</p>
-          <p><em>This project investigates gender-based salary disparities among university faculty using causal inference techniques (both parametric and non-parametric methods). By using public salary data and academic productivity indicators, the study estimates the gender wage gap while adjusting for institutional, departmental, and career-related confounders.</em></p>
-        </div>
-        <div class="card-item">
-          <h3>📚 Citation Networks</h3>
-          <p>Investigated scale-free citation networks and preferential attachment models through Probability and Machine Learning areas.</p>
-          <p><em>This project explores the structure and evolution of citation networks using models of preferential attachment. It reveals how academic influence accumulates over time and highlights structural inequalities in citation-based visibility.</em></p>
-        </div>
-        <div class="card-item">
-          <h3>👶 Baby’s First Years (BFY)</h3>
-          <p>Analyzed panel data to examine how early income supplements impact child development.</p>
-          <p><em>This project uses data from the Baby’s First Years study to evaluate how early economic interventions influence children's cognitive and behavioral outcomes. It leverages longitudinal RCT data to assess policy impact on early development.</em></p>
-        </div>
-        <div class="card-item">
-          <h3>🧓 HCAP/ADAMS Harmonization</h3>
-          <p>Harmonized cognitive health measures across aging-focused datasets to study cognitive decline.</p>
-          <p><em>This work focuses on aligning and integrating data from HCAP and ADAMS to enable longitudinal tracking of aging and cognitive outcomes. It supports robust causal analysis of dementia-related trajectories.</em></p>
-        </div>
-        <div class="card-item">
-          <h3>🧠 Causal Inference Literature</h3>
-          <p>Simulated high-dimensional methods and evaluated their statistical performance.</p>
-          <p><em>This project surveys and tests high-dimensional causal inference methods, such as doubly robust estimators and machine learning approaches. Simulations explore robustness across settings with complex confounding structures.</em></p>
-        </div>
-      </section>
+    <section id="research">
+      <h2>Research</h2>
+      <div class="card">
+        <h3>🎓 How Gender Affects Professors’ Compensation</h3>
+        <p>This project investigates gender-based salary disparities among university faculty using causal inference techniques (both parametric and non-parametric methods). By using public salary data and academic productivity indicators, the study estimates the gender wage gap while adjusting for institutional, departmental, and career-related confounders.</p>
+      </div>
+      <div class="card">
+        <h3>📚 Citation Networks</h3>
+        <p>This project explores the structure and evolution of citation networks using models of preferential attachment. It reveals how academic influence accumulates over time and highlights structural inequalities in citation-based visibility.</p>
+      </div>
+      <div class="card">
+        <h3>👶 Baby’s First Years (BFY)</h3>
+        <p>This project uses data from the Baby’s First Years study to evaluate how early economic interventions influence children's cognitive and behavioral outcomes. It leverages longitudinal RCT data to assess policy impact on early development.</p>
+      </div>
+      <div class="card">
+        <h3>🧓 HCAP/ADAMS Harmonization</h3>
+        <p>This work focuses on aligning and integrating data from HCAP and ADAMS to enable longitudinal tracking of aging and cognitive outcomes. It supports robust causal analysis of dementia-related trajectories.</p>
+      </div>
+      <div class="card">
+        <h3>🧠 Causal Inference Literature</h3>
+        <p>This project surveys and tests high-dimensional causal inference methods, such as doubly robust estimators and machine learning approaches. Simulations explore robustness across settings with complex confounding structures.</p>
+      </div>
+    </section>
 
-      <section id="cv">
-        <h2>Curriculum Vitae</h2>
-        <p>My full academic CV is available for download below. It includes my research experience, academic training, technical skills, and professional background.</p>
-        <p><a href="cv.pdf" target="_blank">Download My CV</a></p>
-      </section>
+    <section id="cv">
+      <h2>Curriculum Vitae</h2>
+      <p><a href="cv.pdf" target="_blank">Download My CV</a></p>
+    </section>
 
-      <section id="teaching">
-        <h2>Teaching</h2>
-        <div class="card-item">
-          <h3>STOR 435: Introduction to Probability</h3>
-          <p>Teaching Assistant, UNC Chapel Hill (Spring 2024). Supported over 100 students, led review sessions, and designed practice materials.</p>
-        </div>
-        <div class="card-item">
-          <h3>MATH 347: Linear Algebra</h3>
-          <p>Learning Assistant, UNC Chapel Hill (Spring 2023). Facilitated student learning and held office hours.</p>
-        </div>
-      </section>
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <div class="card">
+        <h3>STOR 435: Introduction to Probability</h3>
+        <p>Teaching Assistant, UNC Chapel Hill (Spring 2024). Supported over 100 students, led review sessions, and designed practice materials.</p>
+      </div>
+      <div class="card">
+        <h3>MATH 347: Linear Algebra</h3>
+        <p>Learning Assistant, UNC Chapel Hill (Spring 2023). Facilitated student learning and held office hours.</p>
+      </div>
+    </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:zz3213@columbia.edu">zz3213@columbia.edu</a></p>
-        <p>Phone: <a href="tel:+19842187517">+1 (984) 218-7517</a></p>
-        <p>GitHub: <a href="https://github.com/tinazhangzh">github.com/tinazhangzh</a></p>
-        <p>Website: <a href="https://yourwebsite.com/">yourwebsite.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/zihanzhang/">linkedin.com/in/zihanzhang</a></p>
-      </section>
-    </main>
-  </div>
-
-  <script>
-    function showPage(id) {
-      document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-    function toggleTheme() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:zz3213@columbia.edu">zz3213@columbia.edu</a></p>
+      <p>Phone: +1 (984) 218-7517</p>
+      <p>GitHub: <a href="https://github.com/tinazhangzh">github.com/tinazhangzh</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/zihanzhang/">linkedin.com/in/zihanzhang</a></p>
+    </section>
+  </main>
 </body>
 </html>
