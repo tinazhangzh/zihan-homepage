@@ -12,7 +12,11 @@
       --primary: #0077cc;
       --text-light: #eaeaea;
     }
-
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -21,13 +25,13 @@
       display: flex;
       justify-content: center;
     }
-
+    
     .wrapper {
       display: flex;
       max-width: 1200px;
       width: 100%;
     }
-
+    
     .sidebar {
       width: 250px;
       background: var(--dark);
@@ -42,7 +46,7 @@
       left: 0;
       top: 0;
     }
-
+    
     .sidebar img {
       width: 140px;
       height: 140px;
@@ -50,19 +54,26 @@
       object-fit: cover;
       border: 2px solid white;
     }
-
+    
     .sidebar h1 {
       font-size: 1em;
       margin: 0.6em 0 0.4em;
       text-align: center;
     }
-
+    
     .sidebar p {
       text-align: center;
       font-size: 0.85em;
       margin: 0.4em 0;
     }
 
+    .divider {
+      border: none;
+      border-top: 1px solid #666;
+      width: 80%;
+      margin: 1.2em 0;
+    }
+    
     .topnav {
       background: var(--light);
       color: black;
@@ -77,27 +88,27 @@
       z-index: 100;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-
+    
     .topnav a {
       color: black;
       text-decoration: none;
       font-weight: bold;
     }
-
+    
     .content {
       margin-left: 250px;
       padding: 6em 2.5em 2em;
       max-width: 900px;
     }
-
+    
     section {
       display: none;
     }
-
+    
     section.active {
       display: block;
     }
-
+    
     .card {
       background: white;
       border-left: 4px solid var(--primary);
@@ -106,14 +117,15 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       border-radius: 6px;
     }
-
+    
     h2 {
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.3em;
       color: var(--primary);
       margin-top: 0;
     }
-
+    
+    /* ----------- 📱 Responsive (Mobile) ---------- */
     @media screen and (max-width: 768px) {
       .wrapper {
         flex-direction: column;
@@ -123,14 +135,14 @@
         width: 100%;
         position: relative;
         flex-direction: row;
-        justify-content: center;
-        padding: 1em 0;
+        justify-content: flex-start;
+        padding: 1em;
         min-height: auto;
       }
     
       .sidebar img {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         margin-right: 1em;
       }
     
@@ -139,8 +151,8 @@
         margin: 0;
       }
     
-      .sidebar p, .sidebar a {
-        display: none; 
+      .sidebar p {
+        display: none;
       }
     
       .topnav {
@@ -152,7 +164,7 @@
         width: 100%;
         margin-top: 0;
       }
-
+    
       .content {
         margin-left: 0;
         padding: 2em 1em;
@@ -173,7 +185,7 @@
       <p style="text-align: center; font-size: 0.9em; line-height: 1.6em; margin: 0 0 1.2em;">
         Graduate Student<br>in Statistics<br>@ Columbia University
       </p> 
-      <hr>
+      <hr class="divider">
       <div style="margin-top: 1.2em;">
         <p>Causal Inference</p>
         <p>Quantitative Methodology</p>
