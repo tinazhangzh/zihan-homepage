@@ -22,11 +22,11 @@
     }
 
     .sidebar {
-      width: 260px;
+      width: 200px;
       background: var(--dark);
       color: white;
       min-height: 100vh;
-      padding: 2em 1em;
+      padding: 1em 0.5em;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -34,43 +34,45 @@
     }
 
     .sidebar img {
-      width: 120px;
-      height: 120px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid white;
+      border: 2px solid white;
     }
 
     .sidebar h1 {
-      font-size: 1.2em;
-      margin: 1em 0 0.5em;
+      font-size: 1em;
+      margin: 0.6em 0 0.4em;
       text-align: center;
     }
 
     .sidebar p {
-      font-size: 0.9em;
+      font-size: 0.8em;
       text-align: center;
+      margin-bottom: 1em;
     }
 
     .sidebar a {
       color: var(--text-light);
       text-decoration: none;
-      margin: 0.5em 0;
-      font-size: 0.9em;
+      margin: 0.3em 0;
+      font-size: 0.8em;
       display: block;
     }
 
     .topnav {
       background: var(--dark);
       color: white;
-      padding: 1em;
+      padding: 0.8em;
       display: flex;
       justify-content: center;
-      gap: 2em;
+      gap: 1.5em;
       position: fixed;
       top: 0;
-      left: 260px;
+      left: 200px;
       right: 0;
+      z-index: 100;
     }
 
     .topnav a {
@@ -80,18 +82,26 @@
     }
 
     .content {
-      margin-left: 260px;
-      margin-top: 60px;
-      padding: 2em;
-      max-width: 900px;
+      margin-left: 200px;
+      margin-top: 3.8em;
+      padding: 1em 2em;
+      max-width: 850px;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
     }
 
     .card {
       background: white;
       border-left: 4px solid var(--primary);
       padding: 1em;
-      margin-bottom: 2em;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 1.2em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       border-radius: 6px;
     }
 
@@ -99,30 +109,31 @@
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.3em;
       color: var(--primary);
+      margin-top: 0;
     }
   </style>
 </head>
 <body>
-  <aside class="sidebar">
+<aside class="sidebar">
     <img src="profile.jpg" alt="Zihan Zhang">
     <h1>Zihan Zhang</h1>
     <p>Graduate Student<br>Statistics @ Columbia University</p>
-    <a href="#">Email</a>
-    <a href="#">GitHub</a>
-    <a href="#">Google Scholar</a>
-    <a href="#">LinkedIn</a>
+    <a href="mailto:zz3213@columbia.edu">Email</a>
+    <a href="https://github.com/tinazhangzh" target="_blank">GitHub</a>
+    <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+    <a href="https://www.linkedin.com/in/zihanzhang/" target="_blank">LinkedIn</a>
   </aside>
 
   <nav class="topnav">
-    <a href="#home">Home</a>
-    <a href="#research">Research</a>
-    <a href="#cv">CV</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#contact">Contact</a>
+    <a href="#" onclick="switchPage('home')">Home</a>
+    <a href="#" onclick="switchPage('research')">Research</a>
+    <a href="#" onclick="switchPage('cv')">CV</a>
+    <a href="#" onclick="switchPage('teaching')">Teaching</a>
+    <a href="#" onclick="switchPage('contact')">Contact</a>
   </nav>
 
   <main class="content">
-    <section id="home">
+    <section id="home" class="active">
       <h2>About Me</h2>
       <p>I am a graduate student in Statistics at Columbia University, with a dual undergraduate background in Statistics & Mathematics from UNC Chapel Hill. My work lies at the intersection of causal inference, data science, and the social sciences, with experience in research, policy evaluation, and public communication.</p>
     </section>
@@ -176,5 +187,13 @@
       <p>LinkedIn: <a href="https://www.linkedin.com/in/zihanzhang/">linkedin.com/in/zihanzhang</a></p>
     </section>
   </main>
+
+  <script>
+    function switchPage(pageId) {
+      document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
+
