@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zihan (Tina) Zhang | Academic Homepage</title>
+  <title>Zihan Zhang | Academic Homepage</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -19,18 +19,28 @@
       background: var(--light);
       color: #333;
       display: flex;
+      justify-content: center;
+    }
+
+    .wrapper {
+      display: flex;
+      max-width: 1200px;
+      width: 100%;
     }
 
     .sidebar {
-      width: 200px;
+      width: 220px;
       background: var(--dark);
       color: white;
       min-height: 100vh;
-      padding: 1em 0.5em;
+      padding: 1.2em 1em;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: fixed;
+      left: 0;
+      top: 0;
     }
 
     .sidebar img {
@@ -62,30 +72,30 @@
     }
 
     .topnav {
-      background: var(--dark);
-      color: white;
-      padding: 0.8em;
+      background: var(--light);
+      color: black;
+      padding: 1em 0;
       display: flex;
       justify-content: center;
-      gap: 1.5em;
+      gap: 2em;
       position: fixed;
       top: 0;
-      left: 200px;
+      left: 220px;
       right: 0;
       z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
     .topnav a {
-      color: white;
+      color: black;
       text-decoration: none;
       font-weight: bold;
     }
 
     .content {
-      margin-left: 200px;
-      margin-top: 3.8em;
-      padding: 1em 2em;
-      max-width: 850px;
+      margin-left: 220px;
+      padding: 6em 2.5em 2em;
+      max-width: 900px;
     }
 
     section {
@@ -114,79 +124,83 @@
   </style>
 </head>
 <body>
-<aside class="sidebar">
-    <img src="IMG_7961.JPG" alt="Zihan (Tina) Zhang">
-    <h1>Zihan Zhang</h1>
-    <p>Graduate Student<br>Statistics @ Columbia University</p>
-    <a href="mailto:zz3213@columbia.edu">Email</a>
-    <a href="https://github.com/tinazhangzh" target="_blank">GitHub</a>
-    <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
-    <a href="https://www.linkedin.com/in/zihanzhang/" target="_blank">LinkedIn</a>
-  </aside>
+  <div class="wrapper">
+    <aside class="sidebar">
+      <img src="profile.jpg" alt="Zihan Zhang">
+      <h1>Zihan Zhang</h1>
+      <p>Graduate Student<br>Statistics @ Columbia University</p>
+      <a href="mailto:zz3213@columbia.edu">Email</a>
+      <a href="https://github.com/tinazhangzh" target="_blank">GitHub</a>
+      <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/zihanzhang/" target="_blank">LinkedIn</a>
+    </aside>
 
-  <nav class="topnav">
-    <a href="#" onclick="switchPage('home')">Home</a>
-    <a href="#" onclick="switchPage('research')">Research</a>
-    <a href="#" onclick="switchPage('cv')">CV</a>
-    <a href="#" onclick="switchPage('teaching')">Teaching</a>
-    <a href="#" onclick="switchPage('contact')">Contact</a>
-  </nav>
+    <div class="main">
+      <nav class="topnav">
+        <a href="#" onclick="switchPage('home')">Home</a>
+        <a href="#" onclick="switchPage('research')">Research</a>
+        <a href="#" onclick="switchPage('cv')">CV</a>
+        <a href="#" onclick="switchPage('teaching')">Teaching</a>
+        <a href="#" onclick="switchPage('contact')">Contact</a>
+      </nav>
 
-  <main class="content">
-    <section id="home" class="active">
-      <h2>About Me</h2>
-      <p>I am a graduate student in Statistics at Columbia University, with a dual undergraduate background in Statistics & Mathematics from UNC Chapel Hill. My work lies at the intersection of causal inference, data science, and the social sciences, with experience in research, policy evaluation, and public communication.</p>
-    </section>
+      <main class="content">
+        <section id="home" class="active">
+          <h2>About Me</h2>
+          <p>I am a graduate student in Statistics at Columbia University, with a dual undergraduate background in Statistics & Mathematics from UNC Chapel Hill. My work lies at the intersection of causal inference, data science, and the social sciences, with experience in research, policy evaluation, and public communication.</p>
+        </section>
 
-    <section id="research">
-      <h2>Research</h2>
-      <div class="card">
-        <h3>🎓 How Gender Affects Professors’ Compensation</h3>
-        <p>This project investigates gender-based salary disparities among university faculty using causal inference techniques (both parametric and non-parametric methods). By using public salary data and academic productivity indicators, the study estimates the gender wage gap while adjusting for institutional, departmental, and career-related confounders.</p>
-      </div>
-      <div class="card">
-        <h3>📚 Citation Networks</h3>
-        <p>This project explores the structure and evolution of citation networks using models of preferential attachment. It reveals how academic influence accumulates over time and highlights structural inequalities in citation-based visibility.</p>
-      </div>
-      <div class="card">
-        <h3>👶 Baby’s First Years (BFY)</h3>
-        <p>This project uses data from the Baby’s First Years study to evaluate how early economic interventions influence children's cognitive and behavioral outcomes. It leverages longitudinal RCT data to assess policy impact on early development.</p>
-      </div>
-      <div class="card">
-        <h3>🧓 HCAP/ADAMS Harmonization</h3>
-        <p>This work focuses on aligning and integrating data from HCAP and ADAMS to enable longitudinal tracking of aging and cognitive outcomes. It supports robust causal analysis of dementia-related trajectories.</p>
-      </div>
-      <div class="card">
-        <h3>🧠 Causal Inference Literature</h3>
-        <p>This project surveys and tests high-dimensional causal inference methods, such as doubly robust estimators and machine learning approaches. Simulations explore robustness across settings with complex confounding structures.</p>
-      </div>
-    </section>
+        <section id="research">
+          <h2>Research</h2>
+          <div class="card">
+            <h3>🎓 How Gender Affects Professors’ Compensation</h3>
+            <p>This project investigates gender-based salary disparities among university faculty using causal inference techniques (both parametric and non-parametric methods). By using public salary data and academic productivity indicators, the study estimates the gender wage gap while adjusting for institutional, departmental, and career-related confounders.</p>
+          </div>
+          <div class="card">
+            <h3>📚 Citation Networks</h3>
+            <p>This project explores the structure and evolution of citation networks using models of preferential attachment. It reveals how academic influence accumulates over time and highlights structural inequalities in citation-based visibility.</p>
+          </div>
+          <div class="card">
+            <h3>👶 Baby’s First Years (BFY)</h3>
+            <p>This project uses data from the Baby’s First Years study to evaluate how early economic interventions influence children's cognitive and behavioral outcomes. It leverages longitudinal RCT data to assess policy impact on early development.</p>
+          </div>
+          <div class="card">
+            <h3>🧓 HCAP/ADAMS Harmonization</h3>
+            <p>This work focuses on aligning and integrating data from HCAP and ADAMS to enable longitudinal tracking of aging and cognitive outcomes. It supports robust causal analysis of dementia-related trajectories.</p>
+          </div>
+          <div class="card">
+            <h3>🧠 Causal Inference Literature</h3>
+            <p>This project surveys and tests high-dimensional causal inference methods, such as doubly robust estimators and machine learning approaches. Simulations explore robustness across settings with complex confounding structures.</p>
+          </div>
+        </section>
 
-    <section id="cv">
-      <h2>Curriculum Vitae</h2>
-      <p><a href="cv.pdf" target="_blank">Download My CV</a></p>
-    </section>
+        <section id="cv">
+          <h2>Curriculum Vitae</h2>
+          <p><a href="cv.pdf" target="_blank">Download My CV</a></p>
+        </section>
 
-    <section id="teaching">
-      <h2>Teaching</h2>
-      <div class="card">
-        <h3>STOR 435: Introduction to Probability</h3>
-        <p>Teaching Assistant, UNC Chapel Hill (Spring 2024). Supported over 100 students, led review sessions, and designed practice materials.</p>
-      </div>
-      <div class="card">
-        <h3>MATH 347: Linear Algebra</h3>
-        <p>Learning Assistant, UNC Chapel Hill (Spring 2023). Facilitated student learning and held office hours.</p>
-      </div>
-    </section>
+        <section id="teaching">
+          <h2>Teaching</h2>
+          <div class="card">
+            <h3>STOR 435: Introduction to Probability</h3>
+            <p>Teaching Assistant, UNC Chapel Hill (Spring 2024). Supported over 100 students, led review sessions, and designed practice materials.</p>
+          </div>
+          <div class="card">
+            <h3>MATH 347: Linear Algebra</h3>
+            <p>Learning Assistant, UNC Chapel Hill (Spring 2023). Facilitated student learning and held office hours.</p>
+          </div>
+        </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:zz3213@columbia.edu">zz3213@columbia.edu</a></p>
-      <p>Phone: +1 (984) 218-7517</p>
-      <p>GitHub: <a href="https://github.com/tinazhangzh">github.com/tinazhangzh</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/zihanzhang/">linkedin.com/in/zihanzhang</a></p>
-    </section>
-  </main>
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:zz3213@columbia.edu">zz3213@columbia.edu</a></p>
+          <p>Phone: +1 (984) 218-7517</p>
+          <p>GitHub: <a href="https://github.com/tinazhangzh">github.com/tinazhangzh</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/zihanzhang/">linkedin.com/in/zihanzhang</a></p>
+        </section>
+      </main>
+    </div>
+  </div>
 
   <script>
     function switchPage(pageId) {
@@ -196,4 +210,3 @@
   </script>
 </body>
 </html>
-
