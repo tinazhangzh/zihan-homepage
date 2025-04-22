@@ -40,7 +40,7 @@
   }
 
   .sidebar {
-    width: 220px;
+    width: 280px;
     background: var(--dark);
     color: white;
     min-height: 100vh;
@@ -56,8 +56,8 @@
   }
 
   .sidebar img {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid white;
@@ -141,6 +141,39 @@
     color: var(--primary);
     margin-top: 0;
   }
+
+  .subheading {
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  margin: 0.8em 0 0.8em;
+}
+
+.sidebar-tags p {
+  text-align: center;
+  margin: 0.3em 0;
+  font-size: 0.85em;
+}
+
+.sidebar-links a {
+  font-size: 0.85em;
+  display: block;
+  text-align: center;
+  margin: 0.3em 0;
+  color: var(--text-light);
+  text-decoration: none;
+}
+.sidebar-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #777;
+  width: 80%;
+  margin: 1em 0;
+}
 </style>
 </head>
   
@@ -149,17 +182,25 @@
     <aside class="sidebar">
       <img src="IMG_7961.JPG" alt="Zihan Zhang">
       <h1>Zihan (Tina) Zhang</h1>
-      <p>Graduate Student<br>in Statistics<br>@ Columbia University</p>
-      <p>
-        Causal Inference<br>
-        Quantitative Methodology<br>
-        Computational Statistics<br>
-        Social Science Applications<br>
-        Health Policy & Data
-      </p>
-      <a href="mailto:zz3213@columbia.edu">Email</a>
-      <a href="tel:+19842187517">Phone</a>
-      <a href="https://github.com/tinazhangzh" target="_blank">GitHub</a>
+      <p class="subheading">Graduate Student<br>in Statistics<br>@ Columbia University</p>
+    
+      <hr class="divider">
+    
+      <div class="sidebar-tags">
+        <p>Causal Inference</p>
+        <p>Quantitative Methodology</p>
+        <p>Computational Statistics</p>
+        <p>Social Science Applications</p>
+        <p>Health Policy & Data</p>
+      </div>
+    
+      <hr class="divider">
+    
+      <div class="sidebar-links">
+        <a href="mailto:zz3213@columbia.edu">Email</a>
+        <a href="tel:+19842187517">Phone</a>
+        <a href="https://github.com/tinazhangzh" target="_blank">GitHub</a>
+      </div>
     </aside>
 
     <div class="main">
