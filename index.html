@@ -5,123 +5,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zihan Zhang | Academic Homepage</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --dark: #2c2c2c;
-      --light: #f9f9f9;
-      --primary: #0077cc;
-      --text-light: #eaeaea;
-    }
+<style>
+  :root {
+    --dark: #2c2c2c;
+    --light: #f9f9f9;
+    --primary: #0077cc;
+    --text-light: #eaeaea;
+  }
 
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: var(--light);
-      color: #333;
-      display: flex;
-      justify-content: center;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    .wrapper {
-      display: flex;
-      max-width: 1200px;
-      width: 100%;
-    }
+  body, h1, h2, h3, p, a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    color: inherit;
+  }
 
-    .sidebar {
-      width: 220px;
-      background: var(--dark);
-      color: white;
-      min-height: 100vh;
-      padding: 1.2em 1em;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: fixed;
-      left: 0;
-      top: 0;
-    }
+  body {
+    margin: 0;
+    background: var(--light);
+    color: #333;
+    display: flex;
+    justify-content: center;
+  }
 
-    .sidebar img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid white;
-    }
+  .wrapper {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+  }
 
-    .sidebar h1 {
-      font-size: 1em;
-      margin: 0.6em 0 0.4em;
-      text-align: center;
-    }
+  .sidebar {
+    width: 220px;
+    background: var(--dark);
+    color: white;
+    min-height: 100vh;
+    padding: 1.2em 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    font-size: 0.85em;
+  }
 
-    .sidebar p {
-      font-size: 0.8em;
-      text-align: center;
-      margin-bottom: 1em;
-    }
+  .sidebar img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+  }
 
-    .sidebar a {
-      color: var(--text-light);
-      text-decoration: none;
-      margin: 0.3em 0;
-      font-size: 0.8em;
-      display: block;
-    }
+  .sidebar h1 {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0.6em 0 0.4em;
+    text-align: center;
+  }
 
-    .topnav {
-      background: var(--light);
-      color: black;
-      padding: 1em 0;
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      position: fixed;
-      top: 0;
-      left: 220px;
-      right: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
+  .sidebar p {
+    font-size: 0.95em;
+    line-height: 1.6em;
+    margin: 0.3em 0;
+    text-align: center;
+  }
 
-    .topnav a {
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-    }
+  .sidebar a {
+    font-size: 0.9em;
+    display: block;
+    text-align: center;
+    margin: 0.3em 0;
+    color: var(--text-light);
+    text-decoration: none;
+  }
 
-    .content {
-      margin-left: 220px;
-      padding: 6em 2.5em 2em;
-      max-width: 900px;
-    }
+  .sidebar a:hover {
+    color: white;
+    text-decoration: underline;
+  }
 
-    section {
-      display: none;
-    }
+  .topnav {
+    background: var(--light);
+    color: black;
+    padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    position: fixed;
+    top: 0;
+    left: 220px;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
 
-    section.active {
-      display: block;
-    }
+  .topnav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-    .card {
-      background: white;
-      border-left: 4px solid var(--primary);
-      padding: 1em;
-      margin-bottom: 1.2em;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      border-radius: 6px;
-    }
+  .content {
+    margin-left: 220px;
+    padding: 6em 2.5em 2em;
+    max-width: 900px;
+  }
 
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.3em;
-      color: var(--primary);
-      margin-top: 0;
-    }
-  </style>
+  section {
+    display: none;
+  }
+
+  section.active {
+    display: block;
+  }
+
+  .card {
+    background: white;
+    border-left: 4px solid var(--primary);
+    padding: 1em;
+    margin-bottom: 1.2em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-radius: 6px;
+  }
+
+  h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.3em;
+    color: var(--primary);
+    margin-top: 0;
+  }
+</style>
 </head>
   
 <body>
@@ -129,10 +149,8 @@
     <aside class="sidebar">
       <img src="IMG_7961.JPG" alt="Zihan Zhang">
       <h1>Zihan (Tina) Zhang</h1>
-      <p style="text-align: center; font-size: 0.9em; line-height: 1.4em; font-weight: bold;">
-        Graduate Student<br>in Statistics<br>@ Columbia University
-      </p>
-      <p style="text-align: center; font-size: 0.85em; line-height: 1.6em;">
+      <p>Graduate Student<br>in Statistics<br>@ Columbia University</p>
+      <p>
         Causal Inference<br>
         Quantitative Methodology<br>
         Computational Statistics<br>
